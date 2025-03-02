@@ -124,6 +124,11 @@ main {
 	flex-direction: row-reverse;
 }
 
+.category_box img {
+	width: 588px;
+	height: 100%;
+}
+
 .category_description {
 	display: flex;
 	flex-direction: column;
