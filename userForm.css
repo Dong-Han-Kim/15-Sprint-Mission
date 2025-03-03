@@ -1,4 +1,4 @@
-main {
+.userForm_main {
 	width: 640px;
 	margin: 231px auto;
 	display: flex;
@@ -15,6 +15,7 @@ main {
 
 .user_form {
 	font-family: Pretendard;
+	width: 100%;
 }
 
 .input_box {
@@ -28,7 +29,7 @@ main {
 }
 
 .user_form input {
-	width: 640px;
+	width: 100%;
 	height: 56px;
 	font-size: 16px;
 	line-height: 26px;
@@ -96,4 +97,16 @@ main {
 .login_link {
 	text-decoration: underline;
 	color: var(--blue);
+}
+
+@media (max-width: 744px) {
+	#user_form_logo {
+		width: unset;
+		height: 95px;
+	}
+	.userForm_main {
+		margin: 130px auto;
+		padding: 0 20px;
+		width: 100%;
+	}
 }
