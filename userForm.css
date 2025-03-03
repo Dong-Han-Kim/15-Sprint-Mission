@@ -1,18 +1,19 @@
 main {
 	width: 640px;
-	margin: 231px auto 0;
+	margin: 231px auto;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
 
-#login_logo {
+#user_form_logo {
 	width: 396px;
 	height: 132px;
+	margin-bottom: 40px;
 }
 
-.login_form {
+.user_form {
 	font-family: Pretendard;
 }
 
@@ -20,13 +21,13 @@ main {
 	position: relative;
 }
 
-.login_form label {
+.user_form label {
 	font-size: 18px;
 	font-weight: 700;
 	line-height: 26px;
 }
 
-.login_form input {
+.user_form input {
 	width: 640px;
 	height: 56px;
 	font-size: 16px;
@@ -37,7 +38,8 @@ main {
 	margin: 16px 0 24px;
 }
 
-.visible_on {
+.visible_on,
+.visible_off {
 	width: 24px;
 	height: 24px;
 	position: absolute;
@@ -46,7 +48,9 @@ main {
 	right: 24px;
 	margin-top: -16px;
 }
-.login_button {
+
+.login_button,
+.signup_button {
 	font-size: 20px;
 	color: var(--gray100);
 	line-height: 32px;
@@ -86,4 +90,10 @@ main {
 
 .simple_login_list li img {
 	width: 100%;
+}
+
+.signup_link,
+.login_link {
+	text-decoration: underline;
+	color: var(--blue);
 }
