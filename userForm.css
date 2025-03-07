@@ -1,0 +1,112 @@
+.userForm_main {
+	width: 640px;
+	margin: 231px auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#user_form_logo {
+	width: 396px;
+	height: 132px;
+	margin-bottom: 40px;
+}
+
+.user_form {
+	font-family: Pretendard;
+	width: 100%;
+}
+
+.input_box {
+	position: relative;
+}
+
+.user_form label {
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 26px;
+}
+
+.user_form input {
+	width: 100%;
+	height: 56px;
+	font-size: 16px;
+	line-height: 26px;
+	border: none;
+	background-color: var(--gray100);
+	padding: 16px 24px;
+	margin: 16px 0 24px;
+}
+
+.visible_on,
+.visible_off {
+	width: 24px;
+	height: 24px;
+	position: absolute;
+	z-index: 1;
+	top: 50%;
+	right: 24px;
+	margin-top: -16px;
+}
+
+.login_button,
+.signup_button {
+	font-size: 20px;
+	color: var(--gray100);
+	line-height: 32px;
+	font-weight: 600;
+	font-family: Pretendard;
+	background-color: var(--blue);
+	width: 100%;
+	height: 56px;
+	border-radius: 9999px;
+	border: none;
+	margin-bottom: 24px;
+}
+
+.simple_login {
+	background-color: #e6f2ff;
+	width: 100%;
+	height: 74px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 16px 23px;
+}
+
+.simple_login span {
+	font-family: Pretendard;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 26px;
+	color: var(--gray800);
+}
+
+.simple_login_list li {
+	display: inline-block;
+	width: 42px;
+	height: 42px;
+}
+
+.simple_login_list li img {
+	width: 100%;
+}
+
+.signup_link,
+.login_link {
+	text-decoration: underline;
+	color: var(--blue);
+}
+
+@media (max-width: 744px) {
+	#user_form_logo {
+		width: unset;
+		height: 95px;
+	}
+	.userForm_main {
+		margin: 130px auto;
+		padding: 0 20px;
+		width: 100%;
+	}
+}
