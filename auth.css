@@ -7,7 +7,7 @@
 	align-items: center;
 }
 
-#user_form_logo {
+.user_form_logo {
 	width: 396px;
 	height: 132px;
 	margin-bottom: 40px;
@@ -100,7 +100,7 @@
 }
 
 @media (max-width: 744px) {
-	#user_form_logo {
+	.user_form_logo {
 		width: unset;
 		height: 95px;
 	}
