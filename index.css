@@ -1,5 +1,5 @@
 /* Header-start */
-header {
+.navbar {
 	display: flex;
 	align-items: center;
 	background-color: #ffffff;
@@ -12,7 +12,7 @@ header {
 	border-bottom: 1px solid #dfdfdf;
 }
 
-.header_wrap {
+.navbar_wrap {
 	width: 1120px;
 	height: 51px;
 	display: flex;
