@@ -220,14 +220,20 @@ main {
 
 /* Media Query-start */
 
-@media (max-width: 1919px) {
+@media (min-width: 1200px) {
 	.header_wrap {
 		width: 100%;
 		margin: 0 200px;
 	}
 }
 
-@media (max-width: 1200px) {
+@media (min-width: 768px) and (max-width: 1199px) {
+	/* header: start */
+	.navbar_wrap {
+		width: 100%;
+		margin: 0 24px;
+	}
+	/* header: end */
 	.heading {
 		flex-direction: column;
 		justify-content: flex-end;
@@ -258,6 +264,10 @@ main {
 	.content_wrap:nth-child(odd) .category_box {
 		flex-direction: column;
 		align-items: flex-end;
+	}
+
+	.category_box {
+		width: unset;
 	}
 
 	.description {
@@ -304,7 +314,13 @@ main {
 	}
 }
 
-@media (max-width: 744px) {
+@media (min-width: 375px) and (max-width: 767px) {
+	/* header: start */
+	.navbar_wrap {
+		width: 100%;
+		margin: 0 16px;
+	}
+	/* header: end */
 	.header_wrap {
 		margin-left: 30px;
 		margin-right: 30px;
@@ -321,6 +337,7 @@ main {
 
 	.heading {
 		height: 572px;
+		overflow: hidden;
 	}
 
 	.heading_title {
@@ -329,6 +346,7 @@ main {
 
 	.view_button {
 		width: 290px;
+		font-size: 18px;
 	}
 
 	.heading img {
@@ -346,6 +364,11 @@ main {
 		height: 70.43vw;
 	}
 
+	.category_box img {
+		width: 343px;
+		height: 259px;
+	}
+
 	.category_title {
 		font-size: 15px;
 	}
@@ -360,6 +383,7 @@ main {
 
 	.ad {
 		height: 572px;
+		overflow: hidden;
 	}
 
 	.ad > .title {
@@ -370,16 +394,6 @@ main {
 		width: 375px;
 		height: 198px;
 	}
-}
-
-@media (max-width: 455px) {
-	.heading {
-		overflow: hidden;
-	}
-
-	.heading_title span {
-		font-size: 28px;
-	}
 
 	.ft_content_wrap {
 		font-size: 12px;
@@ -387,62 +401,6 @@ main {
 	.codeit {
 		position: absolute;
 		top: 65px;
-	}
-}
-
-@media (max-width: 375px) {
-	.header_wrap {
-		margin-left: 20px;
-		margin-right: 20px;
-	}
-
-	.heading {
-		height: 540px;
-	}
-
-	.heading_title span {
-		font-size: 25px;
-	}
-
-	.view_button {
-		font-size: 18px;
-		width: 258px;
-	}
-
-	.heading img {
-		width: 375px;
-		height: 198px;
-	}
-
-	.content_wrap {
-		height: 20%;
-		margin-top: 85px;
-	}
-
-	.category_box img {
-		width: 343px;
-		height: 259px;
-	}
-
-	.category_title {
-		font-size: 16px;
-	}
-
-	.title {
-		font-size: 24px;
-	}
-
-	.description {
-		font-size: 16px;
-	}
-
-	.ad {
-		height: 540px;
-		overflow: hidden;
-	}
-
-	.ad > .title {
-		font-size: 32px;
 	}
 }
 
