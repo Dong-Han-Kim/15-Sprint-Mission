@@ -26,6 +26,10 @@
 	height: 51px;
 }
 
+.m_logo {
+	display: none;
+}
+
 .login {
 	display: inline-flex;
 	justify-content: center;
@@ -319,6 +323,14 @@ main {
 	.navbar_wrap {
 		width: 100%;
 		margin: 0 16px;
+	}
+	.logo {
+		display: none;
+	}
+	.m_logo {
+		display: inline-block;
+		width: 103px;
+		/* height: 51px; */
 	}
 	/* header: end */
 	.header_wrap {
