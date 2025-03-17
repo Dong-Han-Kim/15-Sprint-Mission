@@ -108,14 +108,23 @@
 	color: var(--blue);
 }
 
+@media (min-width: 1200px) {
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+}
+
 @media (min-width: 375px) and (max-width: 767px) {
+}
+
+@media (max-width: 744px) {
 	.user_form_logo {
 		width: unset;
 		height: 95px;
 	}
 	.userForm_main {
 		margin: 130px auto;
-		padding: 0 16px;
+		padding: 0 20px;
 		width: 100%;
 	}
 }
