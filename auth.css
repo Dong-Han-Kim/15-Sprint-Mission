@@ -37,6 +37,7 @@
 	background-color: var(--gray100);
 	padding: 16px 24px;
 	margin: 16px 0 24px;
+	border-radius: 12px;
 }
 
 .visible_button {
@@ -64,13 +65,18 @@
 	line-height: 32px;
 	font-weight: 600;
 	font-family: Pretendard;
-	background-color: var(--blue);
+	background-color: var(--gray400);
 	width: 100%;
 	height: 56px;
 	border-radius: 9999px;
 	border: none;
 	margin-bottom: 24px;
 	cursor: pointer;
+}
+
+.login_button:hover,
+.signup_button:hover {
+	background-color: var(--blue);
 }
 
 .simple_login {
@@ -108,23 +114,15 @@
 	color: var(--blue);
 }
 
-@media (min-width: 1200px) {
-}
-
-@media (min-width: 768px) and (max-width: 1199px) {
-}
-
 @media (min-width: 375px) and (max-width: 767px) {
-}
-
-@media (max-width: 744px) {
 	.user_form_logo {
 		width: unset;
 		height: 95px;
 	}
 	.userForm_main {
 		margin: 130px auto;
-		padding: 0 20px;
+		padding: 0 16px;
 		width: 100%;
+		max-width: 400px;
 	}
 }
