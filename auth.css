@@ -50,6 +50,7 @@
 	margin-top: -16px;
 	padding: 0;
 	border: none;
+	cursor: pointer;
 }
 
 .visible_on,
