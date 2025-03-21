@@ -56,7 +56,6 @@
 .visible_on,
 .visible_off {
 	width: 100%;
-	height: 100%;
 }
 
 .login_button,
@@ -116,7 +115,7 @@
 	color: var(--blue);
 }
 
-@media (min-width: 375px) and (max-width: 767px) {
+@media (max-width: 767px) {
 	.user_form_logo {
 		width: unset;
 		height: 95px;
