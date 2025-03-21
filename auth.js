@@ -2,8 +2,10 @@ const EMAIL_PATTERN = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-za-z0-9\-]+/;
 
 const email = document.querySelector('#email');
 const password = document.querySelector('#password');
+const nickname = document.querySelector('#nickname');
 const emailAlert = document.querySelector('.email_alert');
 const passwordAlert = document.querySelector('.password_alert');
+const nicknameAlert = document.querySelector('.nickname_alert');
 const authButton = document.querySelector('.auth_button');
 const authBtnLink = document.querySelector('.auth_button a');
 
@@ -44,6 +46,19 @@ function passwordChecker(e) {
 	}
 }
 
+function nicknameChecker(e) {
+	if (e.target.value === '') {
+		e.target.classList.add('inputAlert');
+		nicknameAlert.classList.add('visible_alert');
+		nicknameAlert.textContent = '닉네임을 입력해주세요.';
+		inputStatus = false;
+	} else {
+		e.target.classList.remove('inputAlert');
+		nicknameAlert.classList.remove('visible_alert');
+		inputStatus = true;
+	}
+}
+
 function authButtonActivate(e) {
 	if (!inputStatus) {
 		e.preventDefault();
@@ -54,4 +69,5 @@ function authButtonActivate(e) {
 
 email.addEventListener('focusout', (e) => emailChecker(e));
 password.addEventListener('focusout', (e) => passwordChecker(e));
+nickname.addEventListener('focusout', (e) => nicknameChecker(e));
 authBtnLink.addEventListener('click', (e) => authButtonActivate(e));

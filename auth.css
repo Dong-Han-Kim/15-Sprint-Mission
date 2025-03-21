@@ -45,7 +45,8 @@
 }
 
 .email_alert,
-.password_alert {
+.password_alert,
+.nicknameAlert {
 	display: none;
 }
 
