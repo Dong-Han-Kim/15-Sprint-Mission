@@ -5,6 +5,7 @@ const email = document.querySelector('#email');
 const password = document.querySelector('#password');
 const passwordCheck = document.querySelector('#password_check');
 const nickname = document.querySelector('#nickname');
+const inputAll = document.querySelectorAll('input');
 
 // alert
 const emailAlert = document.querySelector('.email_alert');
@@ -34,7 +35,6 @@ function emailChecker(e) {
 		hideAlert(e.target, emailAlert);
 		emailInputStatus = true;
 	}
-	updateAuthButton();
 }
 
 function nicknameChecker(e) {
@@ -45,7 +45,6 @@ function nicknameChecker(e) {
 		hideAlert(e.target, nicknameAlert);
 		nicknameStatus = true;
 	}
-	updateAuthButton();
 }
 
 function passwordChecker(e) {
@@ -60,7 +59,6 @@ function passwordChecker(e) {
 		checkPassword = e.target.value;
 		pwInputStatus = true;
 	}
-	updateAuthButton();
 }
 
 function passwordDoubleCheck(e) {
@@ -71,7 +69,6 @@ function passwordDoubleCheck(e) {
 		hideAlert(e.target, passwordCheckAlert);
 		pwInputCheckStatus = true;
 	}
-	updateAuthButton();
 }
 
 function showAlert(inputField, element, message) {
@@ -97,19 +94,9 @@ function visibleBtnHandler(e) {
 	}
 }
 
-function updateAuthButton() {
-	authButton.classList.toggle(
-		'btn_active',
-		emailInputStatus && pwInputStatus && nicknameStatus && pwInputCheckStatus
-	);
-}
-
 function authButtonActivate(e) {
-	if (!inputStatus) {
+	if (!authButton.classList.contains('btn_active')) {
 		e.preventDefault();
-		authButton.disabled = true;
-	} else {
-		authButton.disabled = false;
 	}
 }
 
@@ -120,4 +107,22 @@ nickname.addEventListener('focusout', (e) => nicknameChecker(e));
 authBtnLink.addEventListener('click', (e) => authButtonActivate(e));
 passwordVisible.forEach((element) => {
 	element.addEventListener('click', (e) => visibleBtnHandler(e));
+});
+inputAll.forEach((tag) => {
+	tag.addEventListener('input', () => {
+		if (
+			Array.from(inputAll).every((input) => {
+				if (input.type === 'password') {
+					return input.value.length >= 8 && !input.classList.contains('inputAlert');
+				}
+				return input.value !== '' && !input.classList.contains('inputAlert');
+			})
+		) {
+			authButton.classList.add('btn_active');
+			authButton.classList.remove('btn_disable');
+		} else {
+			authButton.classList.remove('btn_active');
+			authButton.classList.add('btn_disable');
+		}
+	});
 });
