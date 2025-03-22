@@ -50,7 +50,7 @@
 
 .email_alert,
 .password_alert,
-.nicknameAlert,
+.nickname_alert,
 .pw_check_alert {
 	display: none;
 }
@@ -80,6 +80,18 @@
 .visible_on,
 .visible_off {
 	width: 100%;
+}
+
+.visible_off {
+	display: none;
+}
+
+.pwVisible {
+	display: inline-block;
+}
+
+.pwInvisible {
+	display: none;
 }
 
 .login_button,
