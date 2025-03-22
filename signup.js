@@ -18,6 +18,7 @@ const authBtnLink = document.querySelector('.auth_button a');
 
 let emailInputStatus = false;
 let pwInputStatus = false;
+let pwInputCheckStatus = false;
 let nicknameStatus = false;
 let checkPassword = '';
 
@@ -36,6 +37,7 @@ function emailChecker(e) {
 		emailAlert.classList.remove('visible_alert');
 		emailInputStatus = true;
 	}
+	updateAuthButton();
 }
 
 function nicknameChecker(e) {
@@ -43,12 +45,13 @@ function nicknameChecker(e) {
 		e.target.classList.add('inputAlert');
 		nicknameAlert.classList.add('visible_alert');
 		nicknameAlert.textContent = '닉네임을 입력해주세요.';
-		pwInputStatus = false;
+		nicknameStatus = false;
 	} else {
 		e.target.classList.remove('inputAlert');
 		nicknameAlert.classList.remove('visible_alert');
-		pwInputStatus = true;
+		nicknameStatus = true;
 	}
+	updateAuthButton();
 }
 
 function passwordChecker(e) {
@@ -56,19 +59,20 @@ function passwordChecker(e) {
 		e.target.classList.add('inputAlert');
 		passwordAlert.classList.add('visible_alert');
 		passwordAlert.textContent = '비밀번호를 입력해주세요.';
-		nicknameStatus = false;
+		pwInputStatus = false;
 	} else if (e.target.value.length < 8) {
 		console.log(e.target.value.length);
 		e.target.classList.add('inputAlert');
 		passwordAlert.classList.add('visible_alert');
 		passwordAlert.textContent = '비밀번호를 8자 이상 입력해주세요.';
-		nicknameStatus = false;
+		pwInputStatus = false;
 	} else {
 		e.target.classList.remove('inputAlert');
 		passwordAlert.classList.remove('visible_alert');
-		nicknameStatus = true;
+		pwInputStatus = true;
 		checkPassword = e.target.value;
 	}
+	updateAuthButton();
 }
 
 function passwordDoubleCheck(e) {
@@ -76,21 +80,25 @@ function passwordDoubleCheck(e) {
 		e.target.classList.add('inputAlert');
 		passwordCheckAlert.classList.add('visible_alert');
 		passwordCheckAlert.textContent = '비밀번호가 일치하지 않습니다.';
-		pwInputStatus = false;
+		pwInputCheckStatus = false;
 	} else {
 		e.target.classList.remove('inputAlert');
 		passwordCheckAlert.classList.remove('visible_alert');
-		pwInputStatus = true;
+		pwInputCheckStatus = true;
 	}
+	updateAuthButton();
+}
+
+function updateAuthButton() {
+	authButton.classList.toggle(
+		'btn_active',
+		emailInputStatus && pwInputStatus && nicknameStatus && pwInputCheckStatus
+	);
 }
 
 function authButtonActivate(e) {
 	if (!inputStatus) {
 		e.preventDefault();
-		authBtnLink.disabled = true;
-	} else {
-		authButton.classList.remove('btn_disable');
-		authButton.classList.add('btn_active');
 	}
 }
 
