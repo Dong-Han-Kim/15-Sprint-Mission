@@ -69,9 +69,16 @@ function authButtonActivate(e) {
 		e.preventDefault();
 	}
 }
+
+function inputInit() {
+	inputAll.forEach((input) => {
+		input.value = '';
+	});
+}
 email.addEventListener('focusout', (e) => emailChecker(e));
 password.addEventListener('focusout', (e) => passwordChecker(e));
 authBtnLink.addEventListener('click', (e) => authButtonActivate(e));
+authButton.addEventListener('click', inputInit);
 passwordVisible.addEventListener('click', visibleBtnHandler);
 inputAll.forEach((tag) => {
 	tag.addEventListener('input', () => {
