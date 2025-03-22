@@ -6,14 +6,13 @@ const emailAlert = document.querySelector('.email_alert');
 const passwordAlert = document.querySelector('.password_alert');
 const authButton = document.querySelector('.auth_button');
 const authBtnLink = document.querySelector('.auth_button a');
-const passwordVisible = document.querySelector('.visible_on');
-const passwordInvisible = document.querySelector('.visible_off');
+const passwordVisible = document.querySelector('.visible_password');
 
 let emailInputStatus = false;
 let pwInputStatus = false;
 
 function emailChecker(e) {
-	if (e.target.value === '' && e.target.type === 'email') {
+	if (e.target.value === '') {
 		showAlert(e.target, emailAlert, '이메일을 입력해주세요.');
 		emailInputStatus = false;
 	} else if (!EMAIL_PATTERN.test(e.target.value)) {
@@ -27,7 +26,7 @@ function emailChecker(e) {
 }
 
 function passwordChecker(e) {
-	if (e.target.value === '' && e.target.type === 'password') {
+	if (e.target.value === '') {
 		showAlert(e.target, passwordAlert, '비밀번호를 입력해주세요.');
 		pwInputStatus = false;
 	} else if (e.target.value.length < 8) {
@@ -61,8 +60,17 @@ function authButtonActivate(e) {
 	}
 }
 
-function visibleBtnHandler(e) {}
+function visibleBtnHandler() {
+	if (password.type === 'password') {
+		password.type = 'text';
+		passwordVisible.src = './image/btn_visibility_off.png';
+	} else {
+		password.type = 'password';
+		passwordVisible.src = './image/btn_visibility_on.png';
+	}
+}
 
 email.addEventListener('focusout', (e) => emailChecker(e));
 password.addEventListener('focusout', (e) => passwordChecker(e));
 authBtnLink.addEventListener('click', (e) => authButtonActivate(e));
+passwordVisible.addEventListener('click', visibleBtnHandler);

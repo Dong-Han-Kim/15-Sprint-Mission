@@ -77,21 +77,8 @@
 	cursor: pointer;
 }
 
-.visible_on,
-.visible_off {
+.visible_password {
 	width: 100%;
-}
-
-.visible_off {
-	display: none;
-}
-
-.pwVisible {
-	display: inline-block;
-}
-
-.pwInvisible {
-	display: none;
 }
 
 .login_button,

@@ -15,6 +15,7 @@ const nicknameAlert = document.querySelector('.nickname_alert');
 // button
 const authButton = document.querySelector('.auth_button');
 const authBtnLink = document.querySelector('.auth_button a');
+const passwordVisible = document.querySelectorAll('.visible_password');
 
 let emailInputStatus = false;
 let pwInputStatus = false;
@@ -84,6 +85,18 @@ function hideAlert(inputField, element) {
 	element.classList.remove('visible_alert');
 }
 
+function visibleBtnHandler(e) {
+	const targetInput = e.target.closest('.input_wrap').querySelector('input');
+	console.log(targetInput);
+	if (targetInput.type === 'password') {
+		targetInput.type = 'text';
+		e.target.src = './image/btn_visibility_off.png';
+	} else {
+		targetInput.type = 'password';
+		e.target.src = './image/btn_visibility_on.png';
+	}
+}
+
 function updateAuthButton() {
 	authButton.classList.toggle(
 		'btn_active',
@@ -94,6 +107,9 @@ function updateAuthButton() {
 function authButtonActivate(e) {
 	if (!inputStatus) {
 		e.preventDefault();
+		authButton.disabled = true;
+	} else {
+		authButton.disabled = false;
 	}
 }
 
@@ -102,3 +118,6 @@ password.addEventListener('focusout', (e) => passwordChecker(e));
 passwordCheck.addEventListener('focusout', (e) => passwordDoubleCheck(e));
 nickname.addEventListener('focusout', (e) => nicknameChecker(e));
 authBtnLink.addEventListener('click', (e) => authButtonActivate(e));
+passwordVisible.forEach((element) => {
+	element.addEventListener('click', (e) => visibleBtnHandler(e));
+});
